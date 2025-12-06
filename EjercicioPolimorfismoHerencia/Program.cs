@@ -1,21 +1,17 @@
-﻿//Actividad 1: Jerarquía simple y método polimórfico
+﻿/*
+Actividad 1: Jerarquía simple y método polimórfico
 
-//Objetivo: internalizar herencia + método sobrescrito + ejecución polimórfica.
+Objetivo: internalizar herencia + método sobrescrito + ejecución polimórfica.
 
-//Crea una clase base Animal con un método HacerSonido().
+- Crea una clase base Animal con un método HacerSonido().
+- Crea 3 clases derivadas: Perro, Gato, Pato.
+- Sobrescribe el método en cada derivada.
+- Crea una lista de Animal y agrega un Perro, un Gato y un Pato.
+- Ejecuta un bucle llamando HacerSonido().
 
-//Crea 3 clases derivadas: Perro, Gato, Pato.
+Qué aprendes:
+- Una sola referencia (Animal) invoca comportamientos distintos.
 
-//Sobrescribe el método en cada derivada.
-
-//Crea una lista de Animal y agrega un Perro, un Gato y un Pato.
-
-//Ejecuta un bucle llamando HacerSonido().
-
-//Qué aprendes:
-
-//Una sola referencia (Animal) invoca comportamientos distintos.
-/*
 abstract public class Animal
 {
     abstract public void HacerSonido();
@@ -71,7 +67,7 @@ Qué aprendes:
 - Qué es comportamiento común
 - Qué es comportamiento específico
 - Cómo conviven ambos
-*/
+
 abstract public class Animal
 {
     public string Nombre { get; set; }
@@ -154,7 +150,7 @@ public class Pajaro : Animal
         throw new NotImplementedException();
     }
 }
-
+*/
 class Program
 {
     static void Main()
@@ -171,7 +167,6 @@ class Program
         {
             animal.HacerSonido();
         }
-        */
 
         List<Animal> animales = new List<Animal>
         {
@@ -200,6 +195,7 @@ class Program
                 );
             }
         }
+        */
 
     }
 }
