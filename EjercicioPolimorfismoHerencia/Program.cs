@@ -15,6 +15,7 @@
 //Qué aprendes:
 
 //Una sola referencia (Animal) invoca comportamientos distintos.
+/*
 abstract public class Animal
 {
     abstract public void HacerSonido();
@@ -44,11 +45,12 @@ public class Pato : Animal
         Console.WriteLine("Quack Quack Quack");
     }
 }
-
+*/
 class Program
 {
     static void Main()
     {
+        /*
         List<Animal> animales = new List<Animal>
         {
             new Perro(),
@@ -60,5 +62,7 @@ class Program
         {
             animal.HacerSonido();
         }
+        */
+
     }
 }
