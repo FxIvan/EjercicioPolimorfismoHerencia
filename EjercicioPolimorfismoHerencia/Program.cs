@@ -15,6 +15,7 @@
 //Qué aprendes:
 
 //Una sola referencia (Animal) invoca comportamientos distintos.
+/*
 abstract public class Animal
 {
     abstract public void HacerSonido();
@@ -44,11 +45,121 @@ public class Pato : Animal
         Console.WriteLine("Quack Quack Quack");
     }
 }
+*/
+
+
+
+/*
+Actividad 2: Agregar datos y comportamiento común
+
+Objetivo: comprender qué se hereda y qué se especializa.
+
+En Animal, agrega: Nombre, Edad, Comer().
+
+En derivadas, agrega comportamientos únicos:
+- Perro.Correr()
+- Gato.Arañar()
+- Pato.Nadar()
+
+En el programa:
+- Crea varios animales
+- Guarda todos como Animal en una lista
+- Llama comportamientos de la clase base
+- Luego baja al tipo concreto (casting seguro) solo cuando lo necesites
+
+Qué aprendes:
+- Qué es comportamiento común
+- Qué es comportamiento específico
+- Cómo conviven ambos
+*/
+abstract public class Animal
+{
+    public string Nombre { get; set; }
+    public int Edad {  get; set; }
+
+    abstract public string Comer();
+    abstract public string Arañar();
+    abstract public string Nadar();
+}
+
+public class Perro : Animal
+{
+    public Perro()
+    {
+        this.Nombre = "Roko";
+        this.Edad = 5;
+    }
+    public override string Arañar()
+    {
+        return "Abrime la puerta gatito";
+    }
+
+    public override string Comer()
+    {
+        return "yo estoy comiendo hueso del asado";
+    }
+
+    public override string Nadar()
+    {
+        return "Me meti a la pileta de mi dueño"; 
+    }
+}
+
+public class Caballo : Animal
+{
+    public Caballo()
+    {
+        this.Nombre = "Mike tayson";
+        this.Edad = 8;
+    }
+    public override string Arañar()
+    {
+        // El caballo no puede arañar
+        throw new NotImplementedException();
+    }
+
+    public override string Comer()
+    {
+        return "Estoy comiendo pasto";
+    }
+
+    public override string Nadar()
+    {
+        // El caballo no puede nadar
+        return "Estoy en un lago nadando";
+    }
+}
+
+public class Pajaro : Animal
+{
+    public Pajaro()
+    {
+        this.Nombre = "Bichito de Luz";
+        this.Edad = 4;
+    }
+
+    public override string Arañar()
+    {
+        // El caballo no puede arañar
+        throw new NotImplementedException();
+    }
+
+    public override string Comer()
+    {
+        return "Estoy comiendo MAIZ";
+    }
+
+    public override string Nadar()
+    {
+        throw new NotImplementedException();
+    }
+}
 
 class Program
 {
     static void Main()
     {
+        /*
         List<Animal> animales = new List<Animal>
         {
             new Perro(),
@@ -60,5 +171,35 @@ class Program
         {
             animal.HacerSonido();
         }
+        */
+
+        List<Animal> animales = new List<Animal>
+        {
+            new Perro(),
+            new Caballo(),
+            new Pajaro(),
+        };
+
+        foreach (var animal in animales)
+        {
+            Console.WriteLine(
+                "--------------------------- \n" +
+                $"Nombre: {animal.Nombre}" +
+                $"\nEdad: {animal.Edad}" +
+                $"\nEstoy: { animal.Comer() }");
+
+            if (animal.Nombre == "Mike tayson")
+            {
+                Console.WriteLine(
+                "--------------------------- \n" +
+                "Este es dato el caballo\n" +
+                $"Nombre: {animal.Nombre}" +
+                $"\nEdad: {animal.Edad}" +
+                $"\nEstoy: {animal.Comer()}" +
+                $"\nEstoy: {animal.Nadar()}" 
+                );
+            }
+        }
+
     }
 }
