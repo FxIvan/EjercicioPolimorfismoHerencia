@@ -168,7 +168,6 @@ Objetivo: entender para qué sirve realmente.
 Qué aprendes:
 - Un método puede recibir cualquier derivado sin que tú lo sepas de antemano.
 - Polimorfismo = código más genérico y flexible.
- */
 
 public class Animal
 {
@@ -216,7 +215,7 @@ public class Gato : Animal
         return "El gato esta maullando";
     }
 }
-
+ */
 class Program
 {
     static void Main()
@@ -261,12 +260,12 @@ class Program
                 );
             }
         }
-        */
 
         Animal perro = new Perro();
         Animal gato = new Gato();
 
         Animal.AtenderAnimal(perro);
         Animal.AtenderAnimal(gato);
+        */
     }
 };
